@@ -4,4 +4,6 @@ resource "aws_s3_bucket_ownership_controls" "crl" {
   rule {
     object_ownership = "BucketOwnerPreferred"
   }
+
+  depends_on = [aws_s3_bucket_public_access_block.crl]
 }
